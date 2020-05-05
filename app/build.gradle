@@ -53,6 +53,10 @@ dependencies {
     implementation "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
     implementation "com.trello.rxlifecycle3:rxlifecycle-components:$rxlifecycle_version"
     implementation "com.trello.rxlifecycle3:rxlifecycle-kotlin:$rxlifecycle_version"
+
+    implementation "pub.devrel:easypermissions:$easypermissions_version"
+    implementation "org.wysaid:gpuimage-plus:$gpuimage_version"
+
     implementation "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:$rxlifecycle_version"
 
     testImplementation "junit:junit:$junit_version"

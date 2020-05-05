@@ -44,4 +44,6 @@ ext {
     espresso_version = '3.2.0'
     ext_junit_version = '1.1.1'
     andyawdlibrary_version = '2.1.0'
+    gpuimage_version = '2.6.3'
+    easypermissions_version = '3.0.0'
 }
