@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ColosseoDuel</string>
+    <string name="no_video_record_permission">沒有錄影權限</string>
 </resources>
