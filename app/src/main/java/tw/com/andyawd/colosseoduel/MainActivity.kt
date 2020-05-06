@@ -3,7 +3,6 @@ package tw.com.andyawd.colosseoduel
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import androidx.appcompat.app.AppCompatActivity
@@ -11,11 +10,11 @@ import com.jakewharton.rxbinding3.view.clicks
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
 import tw.com.andyawd.andyawdlibrary.AWDLog
+import tw.com.andyawd.andyawdlibrary.AWDPermissionsFailAlertDialog
+import tw.com.andyawd.andyawdlibrary.AWDToastMgr
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
-
-    private var videoRecordUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,9 +77,10 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
-
+            AWDPermissionsFailAlertDialog(this, perms)
         } else {
-
+            AWDToastMgr.init(this).build()
+                .show(resources.getString(R.string.open_video_record_permission))
         }
     }
 
