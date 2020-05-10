@@ -2,4 +2,7 @@
     <string name="app_name">羅馬競技生死鬥</string>
     <string name="no_video_record_permission">再不開錄影相關權限真的會被罵</string>
     <string name="open_video_record_permission">惡魔貓男叫你開權限</string>
+    <string name="record">錄影</string>
+    <string name="open_video_record_page">開啟錄影頁面</string>
+    <string name="open_video_play_page">開啟影片清單</string>
 </resources>

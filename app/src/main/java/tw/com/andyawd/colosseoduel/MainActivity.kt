@@ -6,6 +6,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.jakewharton.rxbinding3.view.clicks
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
@@ -16,12 +19,25 @@ import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
+    private val mainMenuFragment = MainMenuFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setWindowBackground()
 
+        initComponent()
         initListener()
+    }
 
+    private fun setWindowBackground() {
+        window.decorView.background = ActivityCompat.getDrawable(this, R.color.colorAccent)
+    }
+
+    private fun initComponent() {
+        supportFragmentManager.inTransaction {
+            replace(R.id.clAmGroup, mainMenuFragment)
+        }
     }
 
     @SuppressLint("CheckResult")
@@ -35,6 +51,13 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
             .subscribe {
                 crglsvAmVideo.endRecording()
             }
+
+        mainMenuFragment.fragmentOpenListener = fragmentOpenListener
+    }
+
+    private inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
+        beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).func()
+            .commitAllowingStateLoss()
     }
 
     private fun createVideoRecord() {
@@ -64,6 +87,20 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                 FileManager.MP4
             ).toString()
         )
+    }
+
+    private val fragmentOpenListener = object : FragmentOpenListener() {
+        override fun onOpenVideoRecordView() {
+            super.onOpenVideoRecordView()
+
+            AWDLog.d("onOpenVideoRecordView")
+        }
+
+        override fun onOpenVideoListView() {
+            super.onOpenVideoListView()
+
+            AWDLog.d("onOpenVideoListView")
+        }
     }
 
     override fun onRequestPermissionsResult(
