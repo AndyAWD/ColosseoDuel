@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/colorAccent"
+    tools:context=".MainMenuFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/acivFmmMenuIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="@dimen/magic_4dp"
+        app:layout_constraintBottom_toTopOf="@+id/mtvFmmMenuText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:src="@drawable/helmet_010101" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtvFmmMenuText"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginTop="@dimen/magic_4dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimaryText"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acivFmmMenuIcon" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFmmOpenVideoRecord"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:layout_marginBottom="@dimen/magic_4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="@dimen/magic_8dp"
+        android:text="@string/open_video_record_page"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/mbFmmOpenVideoList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mtvFmmMenuText"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFmmOpenVideoList"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginTop="@dimen/magic_4dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="@dimen/magic_8dp"
+        android:text="@string/open_video_play_page"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mbFmmOpenVideoRecord" />
+</androidx.constraintlayout.widget.ConstraintLayout>
