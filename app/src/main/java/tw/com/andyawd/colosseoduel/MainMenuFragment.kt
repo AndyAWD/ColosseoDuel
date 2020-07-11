@@ -46,12 +46,12 @@ class MainMenuFragment : Fragment() {
 
     @SuppressLint("CheckResult")
     private fun initClickListener() {
-        mbFmmOpenVideoRecord.clicks()
+        mbFmmOpenDuelScorePage.clicks()
             .throttleFirst(BaseConstants.CLICK_TIMER, TimeUnit.MILLISECONDS)
-            .subscribe { fragmentOpenListener?.onOpenVideoRecordView() }
+            .subscribe { fragmentOpenListener?.onOpenDuelScore() }
 
-        mbFmmOpenVideoList.clicks()
+        mbFmmOpenHistoryRecordPage.clicks()
             .throttleFirst(BaseConstants.CLICK_TIMER, TimeUnit.MILLISECONDS)
-            .subscribe { fragmentOpenListener?.onOpenVideoListView() }
+            .subscribe { fragmentOpenListener?.onOpenHistoryRecord() }
     }
 }
