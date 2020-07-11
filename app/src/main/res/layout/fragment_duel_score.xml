@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/colorAccent"
+    tools:context=".DuelScoreFragment">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tietFdcRedPlayerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginTop="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_4dp"
+        android:background="null"
+        android:gravity="center"
+        android:hint="@string/red_player"
+        android:padding="@dimen/magic_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tietFdcBluePlayerName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tietFdcBluePlayerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_4dp"
+        android:layout_marginTop="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:background="null"
+        android:gravity="center"
+        android:hint="@string/blue_player"
+        android:padding="@dimen/magic_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tietFdcRedPlayerName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtwFdcRedPlayerScore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginTop="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_4dp"
+        android:gravity="center"
+        android:padding="@dimen/magic_8dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mtwFdcBluePlayerScore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tietFdcRedPlayerName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="0" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtwFdcBluePlayerScore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_4dp"
+        android:layout_marginTop="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:gravity="center"
+        android:padding="@dimen/magic_8dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mtwFdcRedPlayerScore"
+        app:layout_constraintTop_toBottomOf="@+id/tietFdcRedPlayerName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFdcRedPlayerScoreHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginTop="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_4dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/mbFdcRedPlayerHitHand"
+        app:layout_constraintEnd_toStartOf="@+id/rvFdcBluePlayerScoreHistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mtwFdcRedPlayerScore" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFdcBluePlayerScoreHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/magic_4dp"
+        android:layout_marginTop="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        app:layout_constraintBottom_toTopOf="@+id/mbFdcRedPlayerHitHand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rvFdcRedPlayerScoreHistory"
+        app:layout_constraintTop_toBottomOf="@+id/mtwFdcRedPlayerScore" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFdcRedPlayerHitHand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_4dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/hit_hand_add_score"
+        app:layout_constraintBottom_toTopOf="@+id/mbFdcRedPlayerHitFacade"
+        app:layout_constraintEnd_toStartOf="@+id/mbFdcBluePlayerHitHand"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFdcBluePlayerHitHand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_4dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/hit_hand_add_score"
+        app:layout_constraintBottom_toTopOf="@+id/mbFdcBluePlayerHitFacade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mbFdcRedPlayerHitHand" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFdcRedPlayerHitFacade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_4dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="@dimen/magic_8dp"
+        android:text="@string/hit_facade_add_score"
+        app:layout_constraintBottom_toTopOf="@+id/mbFdcRedPlayerHitRear"
+        app:layout_constraintEnd_toStartOf="@+id/mbFdcBluePlayerHitFacade"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFdcBluePlayerHitFacade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_4dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="@dimen/magic_8dp"
+        android:text="@string/hit_facade_add_score"
+        app:layout_constraintBottom_toTopOf="@+id/mbFdcBluePlayerHitRear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mbFdcRedPlayerHitFacade" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFdcRedPlayerHitRear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_8dp"
+        android:layout_marginEnd="@dimen/magic_4dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/hit_rear_add_score"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mbFdcBluePlayerHitRear"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbFdcBluePlayerHitRear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/magic_4dp"
+        android:layout_marginEnd="@dimen/magic_8dp"
+        android:layout_marginBottom="@dimen/magic_8dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/hit_rear_add_score"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mbFdcRedPlayerHitRear" />
+</androidx.constraintlayout.widget.ConstraintLayout>

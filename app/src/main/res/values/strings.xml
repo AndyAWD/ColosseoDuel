@@ -7,4 +7,9 @@
     <string name="open_video_play_page">開啟影片清單</string>
     <string name="history_record">歷史記錄</string>
     <string name="duel_score">決鬥記分</string>
+    <string name="blue_player">藍方選手</string>
+    <string name="red_player">紅方選手</string>
+    <string name="hit_hand_add_score">%1$s擊中慣用手及防禦手上臂部加1分</string>
+    <string name="hit_facade_add_score">%1$s擊中正面加2分</string>
+    <string name="hit_rear_add_score">%1$s擊中背面加3分</string>
 </resources>
