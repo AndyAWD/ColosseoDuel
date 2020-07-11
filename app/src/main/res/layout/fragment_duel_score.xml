@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/colorAccent"
+    android:background="@color/colorAccent"
     tools:context=".DuelScoreFragment">
 
     <com.google.android.material.textfield.TextInputEditText
@@ -14,7 +14,7 @@
         android:layout_marginStart="@dimen/magic_8dp"
         android:layout_marginTop="@dimen/magic_8dp"
         android:layout_marginEnd="@dimen/magic_4dp"
-        android:background="null"
+        android:background="@null"
         android:gravity="center"
         android:hint="@string/red_player"
         android:padding="@dimen/magic_8dp"
@@ -31,7 +31,7 @@
         android:layout_marginStart="@dimen/magic_4dp"
         android:layout_marginTop="@dimen/magic_8dp"
         android:layout_marginEnd="@dimen/magic_8dp"
-        android:background="null"
+        android:background="@null"
         android:gravity="center"
         android:hint="@string/blue_player"
         android:padding="@dimen/magic_8dp"

@@ -11,6 +11,7 @@ import tw.com.andyawd.andyawdlibrary.AWDLog
 class MainActivity : AppCompatActivity() {
 
     private val mainMenuFragment = MainMenuFragment()
+    private val duelScoreFragment = DuelScoreFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +47,18 @@ class MainActivity : AppCompatActivity() {
             super.onOpenDuelScore()
 
             AWDLog.d("onOpenDuelScore")
+
+            if (duelScoreFragment.isAdded) {
+                supportFragmentManager.inTransaction {
+                    show(duelScoreFragment)
+                    addToBackStack(BaseConstants.DUEL_SCORE_FRAGMENT)
+                }
+            } else {
+                supportFragmentManager.inTransaction {
+                    add(R.id.clAmGroup, duelScoreFragment)
+                    addToBackStack(BaseConstants.DUEL_SCORE_FRAGMENT)
+                }
+            }
         }
 
         override fun onOpenHistoryRecord() {
