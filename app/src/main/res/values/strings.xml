@@ -5,4 +5,6 @@
     <string name="record">錄影</string>
     <string name="open_video_record_page">開啟錄影頁面</string>
     <string name="open_video_play_page">開啟影片清單</string>
+    <string name="history_record">歷史記錄</string>
+    <string name="duel_score">決鬥記分</string>
 </resources>

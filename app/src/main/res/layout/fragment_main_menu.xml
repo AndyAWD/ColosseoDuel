@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/acivFmmMenuIcon" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mbFmmOpenVideoRecord"
+        android:id="@+id/mbFmmOpenDuelScorePage"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="@dimen/magic_8dp"
@@ -47,16 +47,16 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:padding="@dimen/magic_8dp"
-        android:text="@string/open_video_record_page"
+        android:text="@string/duel_score"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/mbFmmOpenVideoList"
+        app:layout_constraintBottom_toTopOf="@+id/mbFmmOpenHistoryRecordPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mtvFmmMenuText"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mbFmmOpenVideoList"
+        android:id="@+id/mbFmmOpenHistoryRecordPage"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="@dimen/magic_8dp"
@@ -65,10 +65,10 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:padding="@dimen/magic_8dp"
-        android:text="@string/open_video_play_page"
+        android:text="@string/history_record"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mbFmmOpenVideoRecord" />
+        app:layout_constraintTop_toBottomOf="@+id/mbFmmOpenDuelScorePage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
